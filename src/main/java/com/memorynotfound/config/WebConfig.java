@@ -1,6 +1,7 @@
 package com.memorynotfound.config;
 
 import com.memorynotfound.view.course.ItextPdfView;
+import com.memorynotfound.view.person.PersonPdfView;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -26,7 +27,8 @@ public class WebConfig extends WebMvcConfigurerAdapter{
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("/WEB-INF/views/", ".jsp");
         registry.enableContentNegotiation(
-                new ItextPdfView()
+                /* new ItextPdfView()
+                ,*/new PersonPdfView()
                 // Use either ItextPdfView or LowagiePdfView
                 // new LowagiePdfView()
         );

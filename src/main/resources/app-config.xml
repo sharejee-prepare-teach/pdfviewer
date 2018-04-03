@@ -25,6 +25,7 @@
         <mvc:content-negotiation>
             <mvc:default-views>
                 <bean class="com.memorynotfound.view.course.ItextPdfView"/>
+                <bean class="com.memorynotfound.view.person.PersonPdfView"/>
             </mvc:default-views>
         </mvc:content-negotiation>
         <mvc:jsp prefix="/WEB-INF/views/" suffix=".jsp"/>
