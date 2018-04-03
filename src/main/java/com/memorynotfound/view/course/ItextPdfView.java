@@ -18,7 +18,9 @@ public class ItextPdfView extends AbstractITextPdfView {
 
     @Override
     protected void buildPdfDocument(Map<String, Object> model,
-                                    Document document, PdfWriter writer, HttpServletRequest request,
+                                    Document document,
+                                    PdfWriter writer,
+                                    HttpServletRequest request,
                                     HttpServletResponse response) throws Exception {
 
         @SuppressWarnings("unchecked")
