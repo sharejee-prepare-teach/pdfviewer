@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-public class CourseController {
+public class HomeController {
 
     List<Course> documents = Arrays.asList(
             new Course(1, "Spring MVC PDF IText Example", new Date()),
