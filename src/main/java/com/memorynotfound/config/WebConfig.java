@@ -1,6 +1,6 @@
 package com.memorynotfound.config;
 
-import com.memorynotfound.view.ItextPdfView;
+import com.memorynotfound.view.course.ItextPdfView;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;

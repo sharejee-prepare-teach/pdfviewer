@@ -1,30 +1,31 @@
-package com.memorynotfound.view;
+package com.memorynotfound.view.course;
 
-import com.lowagie.text.Document;
-import com.lowagie.text.pdf.PdfPTable;
-import com.lowagie.text.pdf.PdfWriter;
-import com.memorynotfound.model.Course;
-import org.springframework.web.servlet.view.document.AbstractPdfView;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.text.DateFormat;
 import java.util.List;
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-public class LowagiePdfView extends AbstractPdfView {
+import com.itextpdf.text.Document;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.memorynotfound.model.Course;
+import com.memorynotfound.view.AbstractITextPdfView;
+
+public class ItextPdfView extends AbstractITextPdfView {
 
     private static final DateFormat DATE_FORMAT = DateFormat.getDateInstance(DateFormat.SHORT);
 
     @Override
     protected void buildPdfDocument(Map<String, Object> model,
-                                    Document document, PdfWriter writer,
-                                    HttpServletRequest request,
+                                    Document document, PdfWriter writer, HttpServletRequest request,
                                     HttpServletResponse response) throws Exception {
 
         @SuppressWarnings("unchecked")
         List<Course> courses = (List<Course>) model.get("courses");
 
         PdfPTable table = new PdfPTable(3);
+        table.setWidths(new int[]{10, 60, 30});
 
         table.addCell("ID");
         table.addCell("Name");
@@ -36,6 +37,9 @@ public class LowagiePdfView extends AbstractPdfView {
             table.addCell(DATE_FORMAT.format(course.getDate()));
         }
 
+
+
         document.add(table);
     }
+
 }
